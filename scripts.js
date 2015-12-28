@@ -1,6 +1,6 @@
 var Timer = function() {
-  var breakTime = 5;
-  var workTime = 25;
+  var breakTime = 5; // seconds
+  var workTime = 10; // seconds
   var intervalID;
 
   this.getBreakTime = function() {
@@ -13,24 +13,32 @@ var Timer = function() {
 
   this.incBreakTime = function() {
     breakTime = ++breakTime;
+    console.log("this.breakTime is now: " + breakTime);
   };
 
   this.decBreakTime = function() {
     breakTime = --breakTime;
+    console.log("this.breakTime is now: " + breakTime);
   };
 
   this.incWorkTime = function() {
     workTime = ++workTime;
+    console.log("this.workTime is now: " + workTime);
   };
 
   this.decWorkTime = function() {
     workTime = --workTime;
+    console.log("this.workTime is now: " + workTime);
   };
 
   this.startTimer = function($el) {
     while ($el.hasClass('tick')) {
       updateTimer();
     }
+  };
+
+  this.resetTimer = function() {
+
   };
 
   this.updateTimer = function($el) {};
@@ -45,14 +53,5 @@ $('document').ready(function() {
     return timer.getWorkTime();
   });
 
-  $('.break').append(function() {
-    console.log(timer.getBreakTime());
-    return timer.getBreakTime();
-  });
-
-  $time.html(curTime.getMinutes()+":"+curTime.getSeconds());
-  $time.on('click', function() {
-    $time.toggleClass('tick');
-    console.log('ticked');
-  });
+  $time.html((curTime.getMinutes() <10 ? "0"+curTime.getMinutes() : curTime.getMinutes())+":"+(curTime.getSeconds() <10 ? "0"+curTime.getSeconds() : curTime.getSeconds()));
 });
