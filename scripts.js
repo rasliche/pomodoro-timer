@@ -1,3 +1,10 @@
+// ToDo:
+// - Auto continue your sessions
+// - Style
+// -- Change colors based on type of timer
+// -- Sound?
+
+
 var Timer = function() {
   var self = this;
   var breakTime = 300; // seconds
@@ -92,13 +99,6 @@ var Timer = function() {
 };
 
 var timer = new Timer();
-
-// ToDo:
-// - Auto continue your sessions
-// - Adjust times
-// - Style
-// -- Change colors based on type of timer
-// -- Sound?
 
 $('document').ready(function() {
   // Setup the initial timer view
