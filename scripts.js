@@ -142,16 +142,16 @@ $('document').ready(function() {
    $('.incWorkTime').on('click', function() {
     timer.incWorkTime();
     $('.workTimeDisplay').html(timer.getWorkTime() / 60);
-    if (!timer.isTicking()) { // if the clock isn't ticking, go ahead and update the time display area also
-      $('.timeDisplay').html(timer.updateTimer());
-    }
+  //  if (!timer.isTicking()) { // if the clock isn't ticking, go ahead and update the time display area also
+    $('.timeDisplay').html(timer.updateTimer());
+  //  }
   });
   
   $('.decWorkTime').on('click', function() {
     timer.decWorkTime();
     $('.workTimeDisplay').html(timer.getWorkTime() / 60);
-    if (!timer.isTicking()) { // if the clock isn't ticking, go ahead and update the time display area also
-      $('.timeDisplay').html(timer.updateTimer());
-    }
+  //  if (!timer.isTicking()) { // if the clock isn't ticking, go ahead and update the time display area also
+    $('.timeDisplay').html(timer.updateTimer());
+  //  }
   });
 });
