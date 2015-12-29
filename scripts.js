@@ -8,6 +8,10 @@ var Timer = function() {
   var sessionTime = workTime;
   var resetTime;
 
+  this.isTicking = function() {
+    return ticking;
+  };
+  
   this.getBreakTime = function() {
     return breakTime;
   };
@@ -118,7 +122,7 @@ $('document').ready(function() {
   $('.incBreakTime').on('click', function() {
     timer.incBreakTime();
     $('.breakTimeDisplay').html(timer.getBreakTime() / 60);
-    if (!ticking) { // if the clock isn't ticking, go ahead and update the time display area also
+    if (!timer.isTicking()) { // if the clock isn't ticking, go ahead and update the time display area also
       $('.timeDisplay').html(timer.updateTimer());
     }
   });
