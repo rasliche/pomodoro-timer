@@ -33,7 +33,7 @@ var Timer = function() {
   };
 
   this.decBreakTime = function() {
-    breakTime = breakTime > 0 ? breakTime - 60 : 0;
+    breakTime = breakTime > 1 ? breakTime - 60 : 0;
     console.log("this.breakTime is now: " + breakTime);
   };
 
@@ -43,7 +43,7 @@ var Timer = function() {
   };
 
   this.decWorkTime = function() {
-    workTime = workTime > 0 ? workTime - 60 : 0;
+    workTime = workTime > 1 ? workTime - 60 : 0;
     console.log("this.workTime is now: " + workTime);
   };
 
