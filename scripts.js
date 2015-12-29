@@ -103,6 +103,8 @@ var timer = new Timer();
 $('document').ready(function() {
   // Setup the initial timer view
   $('.timeDisplay').html(timer.updateTimer());
+  $('.breakTimeDisplay').html(timer.getBreakTime() / 60);
+  $('.workTimeDisplay').html(timer.getWorkTime() / 60);
 
   // Start button
   $('.startTimer').on('click', function() {
