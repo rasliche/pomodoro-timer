@@ -117,22 +117,22 @@ $('document').ready(function() {
   // Break Time buttons
   $('.incBreakTime').on('click', function() {
     timer.incBreakTime();
-    $('.breakTimeDisplay').html(timer.getBreakTime());
+    $('.breakTimeDisplay').html(timer.getBreakTime() / 60);
   });
   
   $('.decBreakTime').on('click', function() {
     timer.decBreakTime();
-    $('.breakTimeDisplay').html(timer.getBreakTime());
+    $('.breakTimeDisplay').html(timer.getBreakTime() / 60);
   });
   
   // Work Time buttons
    $('.incWorkTime').on('click', function() {
     timer.incWorkTime();
-    $('.workTimeDisplay').html(timer.getWorkTime());
+    $('.workTimeDisplay').html(timer.getWorkTime() / 60);
   });
   
   $('.decWorkTime').on('click', function() {
     timer.decWorkTime();
-    $('.workTimeDisplay').html(timer.getWorkTime());
+    $('.workTimeDisplay').html(timer.getWorkTime() / 60);
   });
 });
