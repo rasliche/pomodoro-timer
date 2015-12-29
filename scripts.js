@@ -1,5 +1,5 @@
 // ToDo:
-// - Auto continue your sessions
+// - Toggle Auto continue your sessions
 // - Style
 // -- Change colors based on type of timer
 // -- Sound?
@@ -11,6 +11,7 @@ var Timer = function() {
   var workTime = 1500; // seconds
   var working = true;
   var ticking = false; // if ticking, can't start the timer again
+  var autoSwitch = false;
   var intervalID;
   var sessionTime = workTime;
   var resetTime;
