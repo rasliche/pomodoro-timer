@@ -70,7 +70,7 @@ var Timer = function() {
     sessionTime = working ? workTime : breakTime;
     this.updateTimer();
     resetTime = undefined;
-    ticking = !ticking;
+    ticking = false;
   };
 
   this.updateTimer = function() {
