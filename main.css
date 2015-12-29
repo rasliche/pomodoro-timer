@@ -17,8 +17,8 @@
 }
 
 /* Controls */
-.controls {
-  padding-top: 5px;
+.controls > * {
+  margin-top: 5px;
 }
 
 /* Timer Controls */
@@ -32,7 +32,7 @@
 }
 
 .decBreakTime {
-  margin-right: 0;
+  
 }
 
 .breakTimeDisplay {
