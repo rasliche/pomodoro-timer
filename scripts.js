@@ -21,12 +21,12 @@ var Timer = function() {
   };
 
   this.incBreakTime = function() {
-    breakTime = breaktime < 3600 ? breaktime + 60 : 3600;;
+    breakTime = breakTime < 3600 ? breakTime + 60 : 3600;
     console.log("this.breakTime is now: " + breakTime);
   };
 
   this.decBreakTime = function() {
-    breakTime = breaktime > 0 ? breaktime - 60 : 0;
+    breakTime = breakTime > 0 ? breakTime - 60 : 0;
     console.log("this.breakTime is now: " + breakTime);
   };
 
