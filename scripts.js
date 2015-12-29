@@ -3,6 +3,7 @@ var Timer = function() {
   var breakTime = 5; // seconds
   var workTime = 10; // seconds
   var working = true;
+  var ticking = false; // if ticking, can't start the timer again
   var intervalID;
   var sessionTime = workTime;
   var resetTime;
@@ -43,20 +44,23 @@ var Timer = function() {
   };
 
   this.startTimer = function() {
-    console.log("Starting the timer");
-    sessionTime = working ? workTime : breakTime;
-    intervalID = window.setInterval(function() {
-      if (sessionTime > 0) {
-        console.log(sessionTime);
-        console.log("Entered the Interval");
-        sessionTime -= 1;
-        $('.timeDisplay').html(self.updateTimer());
-      } else {
-        window.clearInterval(intervalID);
-        self.toggleWork();
-        self.updateTimer();
-      }
-    }, 1000);
+    if (!ticking) {
+      ticking = !ticking;
+      console.log("Starting the timer");
+      sessionTime = working ? workTime : breakTime;
+      intervalID = window.setInterval(function() {
+        if (sessionTime > 0) {
+          console.log(sessionTime);
+          console.log("Entered the Interval");
+          sessionTime -= 1;
+          $('.timeDisplay').html(self.updateTimer());
+        } else {
+          window.clearInterval(intervalID);
+          self.toggleWork();
+          self.updateTimer();
+        }
+      }, 1000);
+    }
   };
 
   this.resetTimer = function() {
@@ -66,6 +70,7 @@ var Timer = function() {
     sessionTime = working ? workTime : breakTime;
     this.updateTimer();
     resetTime = undefined;
+    ticking = !ticking;
   };
 
   this.updateTimer = function() {
