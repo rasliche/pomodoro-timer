@@ -1,4 +1,15 @@
 .timer {
-  padding-top: 50vh;
+  margin-top: 50vh;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100px;
+  width: 200px;
   text-align: center;
+  border: solid 5px #6f6;
+  border-radius: 15px;
+}
+
+.timeDisplay {
+  font-size: 50px;
+  padding-top: auto;
 }
