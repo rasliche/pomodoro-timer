@@ -1,7 +1,11 @@
 var Timer = function() {
+  var self = this;
   var breakTime = 5; // seconds
   var workTime = 10; // seconds
+  var working = true;
   var intervalID;
+  var sessionTime = workTime;
+  var resetTime;
 
   this.getBreakTime = function() {
     return breakTime;
@@ -31,27 +35,65 @@ var Timer = function() {
     console.log("this.workTime is now: " + workTime);
   };
 
-  this.startTimer = function($el) {
-    while ($el.hasClass('tick')) {
-      updateTimer();
-    }
+  this.toggleWork = function() {
+    working = working ? false : true;
+    sessionTime = working ? workTime : breakTime;
+    this.resetTimer();
+    console.log("We are now working: " + working);
+  };
+
+  this.startTimer = function() {
+    console.log("Starting the timer");
+    sessionTime = working ? workTime : breakTime;
+    intervalID = window.setInterval(function() {
+      if (sessionTime > 0) {
+        console.log(sessionTime);
+        console.log("Entered the Interval");
+        sessionTime -= 1;
+        $('.timeDisplay').html(self.updateTimer());
+      } else {
+        window.clearInterval(intervalID);
+        self.toggleWork();
+        self.updateTimer();
+      }
+    }, 1000);
   };
 
   this.resetTimer = function() {
-
+    // Cleared the intervalID set by the
+    // startTimer() method
+    window.clearInterval(intervalID);
+    sessionTime = working ? workTime : breakTime;
+    this.updateTimer();
+    resetTime = undefined;
   };
 
-  this.updateTimer = function($el) {};
+  this.updateTimer = function() {
+    console.log("Trying to display Time");
+
+    var sessionMinutes = Math.floor(sessionTime / 60);
+    var sessionSeconds = Math.floor(sessionTime % 60);
+    var timeStr = sessionMinutes+":"+
+      (sessionSeconds > 9 ? sessionSeconds : ("0"+sessionSeconds));
+    $('.timeDisplay').html(timeStr);
+  };
 };
 
+var timer = new Timer();
+
 $('document').ready(function() {
-  var timer = new Timer();
-  var $time = $('.time');
-  var curTime = new Date();
-  $('.work').append(function() {
-    console.log(timer.getWorkTime());
-    return timer.getWorkTime();
+  $('.timeDisplay').html(timer.updateTimer());
+
+  $('.startTimer').on('click', function() {
+    timer.startTimer();
   });
 
-  $time.html((curTime.getMinutes() <10 ? "0"+curTime.getMinutes() : curTime.getMinutes())+":"+(curTime.getSeconds() <10 ? "0"+curTime.getSeconds() : curTime.getSeconds()));
+  $('.resetTimer').on('click', function() {
+    timer.resetTimer();
+    timer.updateTimer();
+  });
+
+  $('.toggleWork').on('click', function() {
+    timer.toggleWork();
+  });
 });
