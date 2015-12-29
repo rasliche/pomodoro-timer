@@ -81,6 +81,13 @@ var Timer = function() {
 
 var timer = new Timer();
 
+// ToDo:
+// - Auto continue your sessions
+// - Adjust times
+// - Style
+// -- Change colors based on type of timer
+// -- Sound?
+
 $('document').ready(function() {
   $('.timeDisplay').html(timer.updateTimer());
 
