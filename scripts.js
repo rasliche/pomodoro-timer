@@ -21,22 +21,22 @@ var Timer = function() {
   };
 
   this.incBreakTime = function() {
-    breakTime += 60;
+    breakTime = breaktime < 3600 ? breaktime + 60 : 3600;;
     console.log("this.breakTime is now: " + breakTime);
   };
 
   this.decBreakTime = function() {
-    breakTime -= 60;
+    breakTime = breaktime > 0 ? breaktime - 60 : 0;
     console.log("this.breakTime is now: " + breakTime);
   };
 
   this.incWorkTime = function() {
-    workTime += 60;
+    workTime = workTime < 3600 ? workTime + 60 : 3600;
     console.log("this.workTime is now: " + workTime);
   };
 
   this.decWorkTime = function() {
-    workTime -= 60;
+    workTime = workTime > 0 ? workTime - 60 : 0;
     console.log("this.workTime is now: " + workTime);
   };
 
