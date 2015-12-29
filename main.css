@@ -1,5 +1,11 @@
+.container {
+  margin-top: 20vh;
+  height: 80vh;
+  width: 100vw;
+}
+
 .timer {
-  margin-top: 50vh;
+/*  margin-top: 50vh; */
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 5px;
