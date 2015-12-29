@@ -16,6 +16,11 @@
   padding-top: auto;
 }
 
+/* Controls */
+.controls {
+  padding-top: 5px;
+}
+
 /* Timer Controls */
 .timer-controls {
   text-align: center;
