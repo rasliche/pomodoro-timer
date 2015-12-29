@@ -10,13 +10,33 @@
   border-radius: 15px;
 }
 
+/* Time */
 .timeDisplay {
   font-size: 50px;
   padding-top: auto;
 }
 
+/* Timer Controls */
+.timer-controls {
+  text-align: center;
+}
+
+/* Break Settings */
+.break-controls {
+  text-align: center;
+}
+
+.decBreakTime {
+  margin-right: 0;
+}
+
 .breakTimeDisplay {
   display: inline;
+}
+
+/* Work Settings */
+.work-controls {
+  text-align: center;
 }
 
 .workTimeDisplay {
