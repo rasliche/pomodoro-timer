@@ -1,7 +1,7 @@
 var Timer = function() {
   var self = this;
-  var breakTime = 5; // seconds
-  var workTime = 10; // seconds
+  var breakTime = 300; // seconds
+  var workTime = 1500; // seconds
   var working = true;
   var ticking = false; // if ticking, can't start the timer again
   var intervalID;
@@ -17,22 +17,22 @@ var Timer = function() {
   };
 
   this.incBreakTime = function() {
-    breakTime = ++breakTime;
+    breakTime += 60;
     console.log("this.breakTime is now: " + breakTime);
   };
 
   this.decBreakTime = function() {
-    breakTime = --breakTime;
+    breakTime -= 60;
     console.log("this.breakTime is now: " + breakTime);
   };
 
   this.incWorkTime = function() {
-    workTime = ++workTime;
+    workTime += 60;
     console.log("this.workTime is now: " + workTime);
   };
 
   this.decWorkTime = function() {
-    workTime = --workTime;
+    workTime -= 60;
     console.log("this.workTime is now: " + workTime);
   };
 
@@ -94,18 +94,45 @@ var timer = new Timer();
 // -- Sound?
 
 $('document').ready(function() {
+  // Setup the initial timer view
   $('.timeDisplay').html(timer.updateTimer());
 
+  // Start button
   $('.startTimer').on('click', function() {
     timer.startTimer();
   });
 
+  // Reset button
   $('.resetTimer').on('click', function() {
     timer.resetTimer();
     timer.updateTimer();
   });
 
+  // Toggle button
   $('.toggleWork').on('click', function() {
     timer.toggleWork();
+  });
+  
+  // Time adjust buttons
+  // Break Time buttons
+  $('.incBreakTime').on('click', function() {
+    timer.incBreakTime();
+    $('.breakTimeDisplay').html(timer.getBreakTime());
+  });
+  
+  $('.decBreakTime').on('click', function() {
+    timer.decBreakTime();
+    $('.breakTimeDisplay').html(timer.getBreakTime());
+  });
+  
+  // Work Time buttons
+   $('.incWorkTime').on('click', function() {
+    timer.incWorkTime();
+    $('.workTimeDisplay').html(timer.getWorkTime());
+  });
+  
+  $('.decWorkTime').on('click', function() {
+    timer.decWorkTime();
+    $('.workTimeDisplay').html(timer.getWorkTime());
   });
 });
