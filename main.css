@@ -2,6 +2,7 @@
   margin-top: 50vh;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 5px;
   height: 100px;
   width: 200px;
   text-align: center;
@@ -12,4 +13,12 @@
 .timeDisplay {
   font-size: 50px;
   padding-top: auto;
+}
+
+.breakTimeDisplay {
+  display: inline;
+}
+
+.workTimeDisplay {
+  display: inline;
 }
