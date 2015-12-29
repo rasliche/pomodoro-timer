@@ -36,7 +36,7 @@
 }
 
 .breakTimeDisplay {
-  display: inline;
+  text-align: center;
 }
 
 /* Work Settings */
@@ -45,5 +45,5 @@
 }
 
 .workTimeDisplay {
-  display: inline;
+  text-align: center;
 }
