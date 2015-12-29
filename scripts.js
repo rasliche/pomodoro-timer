@@ -79,6 +79,9 @@ var Timer = function() {
 
   this.updateTimer = function() {
     console.log("Trying to display Time");
+    if (!this.isTicking()) {
+      sessionTime = working ? workTime : breakTime;
+    }
 
     var sessionMinutes = Math.floor(sessionTime / 60);
     var sessionSeconds = Math.floor(sessionTime % 60);
