@@ -1,7 +1,14 @@
+.container-fluid {
+  margin-top: 20vh;
+  height: 80vh;
+  width: 100vw;
+}
+
 .timer {
-  margin-top: 50vh;
+/*  margin-top: 50vh; */
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 5px;
   height: 100px;
   width: 200px;
   text-align: center;
@@ -9,7 +16,42 @@
   border-radius: 15px;
 }
 
+/* Time */
 .timeDisplay {
   font-size: 50px;
   padding-top: auto;
+}
+
+/* Controls */
+.controls > * {
+  margin-top: 5px;
+}
+
+/* Timer Controls */
+.timer-controls {
+  text-align: center;
+}
+
+/* Break Settings */
+.break-controls {
+  text-align: center;
+}
+
+.decBreakTime {
+  
+}
+
+.breakTimeDisplay {
+  display: inline;
+  text-align: center;
+}
+
+/* Work Settings */
+.work-controls {
+  text-align: center;
+}
+
+.workTimeDisplay {
+  display: inline;
+  text-align: center;
 }

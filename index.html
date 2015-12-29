@@ -16,25 +16,31 @@
   <title>Timer</title>
 </head>
 <body>
-  <div class="container">
+  <div class="container-fluid">
   <div class="timer">
-    <p class="timeDisplay">00:00</p>
+    <p class="timeDisplay">Enable Javascript to Use the Timer.</p>
   </div>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+    
   <div class="row controls">
-    <div class="col-xs-4 timer-controls">
-      <button class="btn startTimer">Start</button>
-      <button class="btn resetTimer">Reset</button>
+    <div class="col-xs-12 col-md-4 col-md-push-4 timer-controls">
+      <button class="btn startTimer"><i class="glyphicon glyphicon-play"></i></button>
+      <button class="btn resetTimer"><i class="glyphicon glyphicon-refresh"></i></button>
       <button class="btn toggleWork">Toggle</button>
     </div>
-    <div class="col-xs-4 break-controls">
-      <button class="btn incBreakTime">+</button>
-      <button class="btn decBreakTime">-</button>
+    <div class="col-xs-12 col-md-4 col-md-pull-4 break-controls">
+      <button class="btn incBreakTime"><i class="glyphicon glyphicon-plus"></i></button>
       <div class="breakTimeDisplay">BreakTime</div>
+      <button class="btn decBreakTime"><i class="glyphicon glyphicon-minus"></i></button>
     </div>
-    <div class="col-xs-4 work-controls">
-      <button class="btn incWorkTime">+</button>
-      <button class="btn decWorkTime">-</button>
+    <div class="col-xs-12 col-md-4 work-controls">
+      <button class="btn incWorkTime"><i class="glyphicon glyphicon-plus"></i></button>
       <div class="workTimeDisplay">WorkTime</div>
+      <button class="btn decWorkTime"><i class="glyphicon glyphicon-minus"></i></button>
+    </div>
+  </div>
+    
     </div>
   </div>
 </div>
