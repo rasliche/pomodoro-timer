@@ -104,8 +104,8 @@ var timer = new Timer();
 $('document').ready(function() {
   // Setup the initial timer view
   $('.timeDisplay').html(timer.updateTimer());
-  $('.breakTimeDisplay p').html(timer.getBreakTime() / 60);
-  $('.workTimeDisplay p').html(timer.getWorkTime() / 60);
+  $('.breakTimeDisplay').html(timer.getBreakTime() / 60);
+  $('.workTimeDisplay').html(timer.getWorkTime() / 60);
 
   // Start button
   $('.startTimer').on('click', function() {
@@ -127,7 +127,7 @@ $('document').ready(function() {
   // Break Time buttons
   $('.incBreakTime').on('click', function() {
     timer.incBreakTime();
-    $('.breakTimeDisplay p').html(timer.getBreakTime() / 60);
+    $('.breakTimeDisplay').html(timer.getBreakTime() / 60);
   //  if (!timer.isTicking()) { // if the clock isn't ticking, go ahead and update the time display area also
     $('.timeDisplay').html(timer.updateTimer());
   //  }
@@ -135,7 +135,7 @@ $('document').ready(function() {
   
   $('.decBreakTime').on('click', function() {
     timer.decBreakTime();
-    $('.breakTimeDisplay p').html(timer.getBreakTime() / 60);
+    $('.breakTimeDisplay').html(timer.getBreakTime() / 60);
     //if (!timer.isTicking()) { // if the clock isn't ticking, go ahead and update the time display area also
     $('.timeDisplay').html(timer.updateTimer());
     //}
@@ -144,7 +144,7 @@ $('document').ready(function() {
   // Work Time buttons
    $('.incWorkTime').on('click', function() {
     timer.incWorkTime();
-    $('.workTimeDisplay p').html(timer.getWorkTime() / 60);
+    $('.workTimeDisplay').html(timer.getWorkTime() / 60);
   //  if (!timer.isTicking()) { // if the clock isn't ticking, go ahead and update the time display area also
     $('.timeDisplay').html(timer.updateTimer());
   //  }
@@ -152,7 +152,7 @@ $('document').ready(function() {
   
   $('.decWorkTime').on('click', function() {
     timer.decWorkTime();
-    $('.workTimeDisplay p').html(timer.getWorkTime() / 60);
+    $('.workTimeDisplay').html(timer.getWorkTime() / 60);
   //  if (!timer.isTicking()) { // if the clock isn't ticking, go ahead and update the time display area also
     $('.timeDisplay').html(timer.updateTimer());
   //  }
