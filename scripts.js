@@ -3,7 +3,7 @@
 // - Style
 // -- Change colors based on type of timer
 // -- Sound?
-
+// - Show time left in page/tab title
 
 var Timer = function() {
   var self = this;
@@ -19,7 +19,7 @@ var Timer = function() {
   this.isTicking = function() {
     return ticking;
   };
-  
+
   this.getBreakTime = function() {
     return breakTime;
   };
@@ -122,7 +122,7 @@ $('document').ready(function() {
   $('.toggleWork').on('click', function() {
     timer.toggleWork();
   });
-  
+
   // Time adjust buttons
   // Break Time buttons
   $('.incBreakTime').on('click', function() {
@@ -132,7 +132,7 @@ $('document').ready(function() {
     $('.timeDisplay').html(timer.updateTimer());
   //  }
   });
-  
+
   $('.decBreakTime').on('click', function() {
     timer.decBreakTime();
     $('.breakTimeDisplay').html(timer.getBreakTime() / 60);
@@ -140,7 +140,7 @@ $('document').ready(function() {
     $('.timeDisplay').html(timer.updateTimer());
     //}
   });
-  
+
   // Work Time buttons
    $('.incWorkTime').on('click', function() {
     timer.incWorkTime();
@@ -149,7 +149,7 @@ $('document').ready(function() {
     $('.timeDisplay').html(timer.updateTimer());
   //  }
   });
-  
+
   $('.decWorkTime').on('click', function() {
     timer.decWorkTime();
     $('.workTimeDisplay').html(timer.getWorkTime() / 60);
